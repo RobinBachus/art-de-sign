@@ -6,5 +6,6 @@
 	"editor.quickSuggestions": {
 		"strings": true
 	},
-	"cSpell.language": "en,nl"
+	"cSpell.language": "en,nl",
+	"vue3snippets.enable-compile-vue-file-on-did-save-code": false
 }

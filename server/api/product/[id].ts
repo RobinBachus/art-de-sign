@@ -1,8 +1,7 @@
 import type { Product } from "~/server/types";
 import products from "~/public/assets/json/products.json";
 
-const placeholder =
-	"https://via.placeholder.com/500X500/dedede/000000?Text=500X500";
+const placeholder = "/assets/img/product_placeholder.png";
 
 export default defineEventHandler(async (event) => {
 	const params = event.context.params;
@@ -23,12 +22,12 @@ export default defineEventHandler(async (event) => {
 });
 
 async function getProduct(id: number): Promise<Product | null> {
-	return products.find((product) => product.id === +id) ?? null;
+	return products.find((product) => product.id === id) ?? null;
 }
 
 async function imageExists(image: string): Promise<boolean> {
 	try {
-		await $fetch(`${image}`);
+		await $fetch(image);
 		return true;
 	} catch {
 		return false;

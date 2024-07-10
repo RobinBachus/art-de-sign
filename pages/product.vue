@@ -6,8 +6,11 @@ const product = (data.value?.body ?? null) as Product | null;
 </script>
 
 <template>
-	<div>
-		<h1>{{ product?.name }}</h1>
-		<img :src="product?.image" alt="" />
-	</div>
+	<h1>{{ product?.name }}</h1>
+	<img
+		:src="product?.image"
+		:alt="product?.name"
+		height="224"
+		width="224"
+		class="object-contain" />
 </template>
